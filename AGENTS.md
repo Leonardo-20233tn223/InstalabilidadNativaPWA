@@ -3,9 +3,9 @@
 ## Estado del repo
 
 - PWA estática en JavaScript vanilla: sin `package.json`, build, tests, lint ni CI. Los archivos se sirven tal cual.
-- Repo git inicializado en la rama `main`, aún sin commits. No hacer commit ni push salvo que se pida.
+- Repo git en `main` con remoto `https://github.com/Leonardo-20233tn223/InstalabilidadNativaPWA`; GitHub Pages activo en `https://leonardo-20233tn223.github.io/InstalabilidadNativaPWA/`. No hacer commit ni push salvo que se pida.
 - La app activa está en la raíz de `pwa-practica-5.1/`: `index.html`, `app.js`, `sw.js`, `style.css`, `manifest.json` e `icons/`. No crear una subcarpeta para la app.
-- `pwa-practica-4.2/` es solo guía de la práctica anterior (PokéAPI + estrategias de caché). No es la app activa ni se debe modificar.
+- `pwa-practica-4.2/` es solo guía de la práctica anterior (PokéAPI + estrategias de caché). No es la app activa, no se debe modificar y está ignorada por `.gitignore` (no se publica en Pages).
 - El hermano `../app` es otra PWA (FakeStore, ruta relativa del SW, UI de actualización/online) útil como referencia de estilo.
 - Alcance actual: instalabilidad (manifest + SW) y cámara con pre-permiso. No hay IndexedDB, outbox ni Background Sync en esta práctica.
 
@@ -37,12 +37,14 @@
 
 ## GitHub Pages
 
+- Pages ya está configurado: branch `main`, folder `/ (root)`, build_type `legacy`; `.nojekyll` evita el procesado de Jekyll.
 - Publicar con la app en la raíz del repo (o abrir la URL de su subcarpeta). Source: Deploy from a branch, branch `main`, folder `/ (root)`.
 - URL de proyecto: `https://<usuario>.github.io/<repo>/`. Todas las rutas deben ser relativas (`./`).
 - `manifest.json` con `start_url: "./"`, `scope: "./"` e `id: "./"`; usar `.json` (no `.webmanifest`) por el MIME de GitHub Pages.
 - `sw.js` debe estar en la misma carpeta que `index.html`; GitHub Pages no permite la cabecera `Service-Worker-Allowed`.
 - El repo debe ser público si la cuenta es GitHub Free.
 - Tras desplegar, sube `CACHE_NAME` y espera la publicación; en el teléfono cierra y reabre la app para tomar el nuevo SW.
+- `gh` está autenticado como `LeonardoMV03`, que solo tiene lectura en este repo; el push funciona con la credencial git almacenada del dueño `Leonardo-20233tn223`. Para operar la API de Pages usa la UI del dueño o su credencial, sin imprimir tokens.
 
 ## Estilo
 
