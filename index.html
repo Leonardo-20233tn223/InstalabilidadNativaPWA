@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cámara PWA</title>
+  <meta name="description" content="Galería de fotos instalable con cámara frontal y trasera.">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cámara PWA">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon-180.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Cámara PWA</h1>
+    <p class="subtitle">Toma fotos con la lente frontal o trasera y descárgalas.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="titulo-instalar">
+      <h2 id="titulo-instalar">Instala la app</h2>
+      <p id="texto-instalacion">Puedes añadir esta aplicación a la pantalla de inicio para usarla como una app nativa.</p>
+      <button id="btn-instalar" class="btn primario oculto" type="button">Instalar aplicación</button>
+      <div id="instrucciones-ios" class="nota oculto">
+        <p><strong>En iPhone o iPad:</strong></p>
+        <ol>
+          <li>Abre esta página en Safari.</li>
+          <li>Toca el botón <strong>Compartir</strong>.</li>
+          <li>Elige <strong>Agregar a inicio</strong>.</li>
+        </ol>
+      </div>
+      <p id="estado-instalacion" class="estado" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card" aria-labelledby="titulo-camara">
+      <h2 id="titulo-camara">Cámara</h2>
+
+      <div id="pre-permiso">
+        <p>Para tomar fotos necesitamos acceder a tu cámara.</p>
+        <ul class="lista">
+          <li>La cámara solo se activa cuando pulses el botón.</li>
+          <li>Las fotos se quedan en tu dispositivo y solo durante esta sesión; usa Descargar para conservarlas.</li>
+          <li>Puedes detener la cámara en cualquier momento.</li>
+        </ul>
+        <p class="nota">El navegador te pedirá permiso la primera vez.</p>
+        <button id="btn-permitir" class="btn primario" type="button">Activar cámara</button>
+      </div>
+
+      <div id="visor" class="oculto">
+        <video id="video" aria-label="Vista previa de la cámara" autoplay muted playsinline webkit-playsinline></video>
+        <div class="controles">
+          <button id="btn-cambiar" class="btn" type="button">Cambiar cámara</button>
+          <button id="btn-capturar" class="btn primario" type="button">Capturar</button>
+          <button id="btn-detener" class="btn peligro" type="button">Detener</button>
+        </div>
+      </div>
+
+      <p id="estado-camara" class="estado" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria">Fotos</h2>
+      <p id="sin-fotos" class="nota">Aún no has tomado fotos.</p>
+      <div id="galeria" class="galeria"></div>
+    </section>
+  </main>
+
+  <canvas id="canvas" class="oculto"></canvas>
+  <script src="./app.js"></script>
+</body>
+</html>
