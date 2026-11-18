@@ -16,7 +16,7 @@
 - Manifest: `node -e "JSON.parse(require('fs').readFileSync('manifest.json','utf8'))"`.
 - Iconos: comprobar dimensiones reales (192x192, 512x512, 180x180) con PowerShell/System.Drawing.
 - Instalabilidad: DevTools > Application > Manifest sin errores; Chrome/Edge deben ofrecer instalar.
-- Offline: DevTools > Network > Offline + recarga; debe cargar el shell desde `camara-static-v1`.
+- Offline: DevTools > Network > Offline + recarga; debe cargar el shell desde la caché `camara-static-*`.
 - Un SW modificado tarda en activarse; este usa `skipWaiting()` + `clients.claim()`, pero la página actual puede seguir con el JS viejo hasta recargar. En desarrollo usa DevTools > Application > Service Workers > Update / "Update on reload".
 
 ## Errores de la guía 4.2 a no repetir

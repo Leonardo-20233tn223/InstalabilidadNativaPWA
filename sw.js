@@ -1,4 +1,4 @@
-const CACHE_NAME = "camara-static-v1";
+const CACHE_NAME = "camara-static-v2";
 const CACHE_PREFIX = "camara-static-";
 const APP_SHELL = new URL("./index.html", self.location).href;
 const PRECACHE = [

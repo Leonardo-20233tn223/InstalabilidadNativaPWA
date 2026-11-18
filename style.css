@@ -41,6 +41,12 @@ h1 {
   color: var(--texto-suave);
 }
 
+.autor {
+  margin: 6px 0 0;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
 main {
   max-width: 640px;
   margin: 0 auto;
